@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hangman</title>
+</head>
+<body>
+<script>
+var words = ["hawks","celtics","nets","hornets","bulls","cavaliers","mavericks","nuggets","pistons","warriors","rockets","pacers","clippers","lakers","grizzlies","heat","bucks","timberwolves","pelicans","knicks","thunder","magic","suns","blazers","kings","spurs","raptors","jazz","wizards","76ers"]
+var computerGuess = words[Math.floor(Math.random() * words.length) ];
+console.log(computerGuess)
+var dashes = computerGuess.replace(/./g,'_').split('');
+console.log(dashes);
+
+document.onkeyup = function(event) {
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+console.log (userGuess)
+var index = computerGuess.indexOf(userGuess)
+console.log(computerGuess.indexOf(userGuess))
+
+	if (index !== -1) {
+		dashes[index] = userGuess;
+	}
+	console.log(dashes);
+}
+
+</script>
+</body>
+</html> 
